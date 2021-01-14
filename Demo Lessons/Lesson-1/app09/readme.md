@@ -1,0 +1,1 @@
+"This rep contains the MEAN stack application that is buil in CS572 Modern Web Application course."

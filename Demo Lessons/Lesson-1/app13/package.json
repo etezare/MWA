@@ -1,0 +1,20 @@
+{
+  "name": "app13",
+  "version": "1.0.0",
+  "description": "MEAN Games",
+  "main": "app13.js",
+  "scripts": {
+    "start": "nodemon app13.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MEAN",
+    "Games",
+    "application"
+  ],
+  "author": "Essey Tezare",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

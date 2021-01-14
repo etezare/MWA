@@ -1,0 +1,21 @@
+{
+  "name": "app09",
+  "version": "1.0.0",
+  "description": "This is my first npm project",
+  "main": "app09.js",
+  "scripts": {
+    "start":"node app09.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Essey Tezare",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
