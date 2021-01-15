@@ -4,6 +4,6 @@ var controllerStudent =require("../controllers/students.controllers.js");
 var controllerAddress=require("../controllers/address.controller.js");
 router.route("/students").get(controllerStudent.studentsGetAll);
 router.route("/students/:studentId").get(controllerStudent.studentGetOne);
-router.route("/students/:studentId/address").get(controllerAddress.addressGetAll);
-router.route("/students/:studentId/address/:addressId").get(controllerAddress.addressGetOne);
+router.route("/students/:studentId/addresses").get(controllerAddress.addressGetAll);
+router.route("/students/:studentId/addresses/:addressId").get(controllerAddress.addressGetOne);
 module.exports=router;
