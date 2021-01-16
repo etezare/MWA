@@ -1,4 +1,19 @@
 var mongoose=require("mongoose");
+
+// var UserSchema = mongoose.Schema({
+//     location: {
+//       type: {
+//         type: String,
+//         enum: ['Point'],
+//         default: 'Point',
+//       },
+//       coordinates: {
+//         type: [Number],
+//         default: [0, 0],
+//       }
+//     }
+//   });
+
 var gameSchema=mongoose.Schema({
     title:{
         type:String,
@@ -28,7 +43,7 @@ var gameSchema=mongoose.Schema({
     },
     minAge:Number,
     location:{
-        address:String,
+        // address:String,
         coordinates:{
             type:[Number],
             index:"2dsphere"
@@ -36,6 +51,11 @@ var gameSchema=mongoose.Schema({
 
 
     },
+    location: {
+        type: { type: String },
+        coordinates: []
+       },
     designers:[String]
 })
+// gameSchema.index({location:'2dsphere'})
 mongoose.model("Game",gameSchema,"games");

@@ -65,6 +65,9 @@ module.exports.publisherAdd = function (req, res) {
         response.message = { message: "Game ID not found" };
       }
       if (game) {
+        if(!game.publisher){
+          game.publisher={name:"empty",location:[]};
+        }
         _addPublisher(req, res, game);
       } else {
         res.status(response.status).json(response.message);

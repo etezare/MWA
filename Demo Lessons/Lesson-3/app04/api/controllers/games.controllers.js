@@ -32,7 +32,7 @@ var runGeoQuery = function (res, req) {
 
 module.exports.gamesGetAll = function (req, res) {
   var offset = 0;
-  var count = 3;
+  var count = 7;
   if (req.query && req.query.offset) {
     offset = parseInt(req.query.offset, 10);
   }
