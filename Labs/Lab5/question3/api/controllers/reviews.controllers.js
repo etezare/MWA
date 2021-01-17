@@ -113,7 +113,6 @@ var _updateReview = function (req, res, game) {
   game.save(function (err, updateGame) {
     var response = { status: 204 };
     if (err) {
-      console.log("Error finding game");
       response.status = 500;
       response.message = err;
     }

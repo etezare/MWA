@@ -1,6 +1,12 @@
+const { ObjectID } = require("mongodb");
 var mongoose=require("mongoose");
 const { title } = require("process");
 var authorSchema=mongoose.Schema({
+ 
+    id :{
+        type: ObjectID,
+        required:false
+    },
     name:String,
     yearbBorn:{
         type:Number,
@@ -11,10 +17,6 @@ var authorSchema=mongoose.Schema({
         length:1
     },
     numberOfBooks:Number
-
-
-
-
 })
 
 

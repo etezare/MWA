@@ -53,91 +53,97 @@ module.exports.bookGetOne = function (req, res) {
   });
 };
 
-module.exports.bookAddOne=function(req,res){
-  console.log("Post Book")
+module.exports.bookAddOne = function (req, res) {
+  console.log("Post Book");
   console.log(req.body);
-  if(req.body){
-  Book.create({
-  author:req.body.author,
-  price:req.body.price,
-  country:req.body.country,
-  imageLink:req.body.imageLink,
-  language:req.body.language,
-  pages:req.body.pages,
-  title:req.body.title,
-  year:req.body.year
-  },function(err,book){
-    const response={
-      message:book,
-      status:201
-    }
-    if(err){
-      response.status=500;
-      response.message=err;
-    }else{
-      console.log("Book Created ")
-      res.status(response.status).json(response.message);
-    }
-    
-  })}else{
-    res.status(400).json({error:"Body missing data "});
+  if (req.body) {
+    Book.create(
+      {
+        author: req.body.author,
+        price: req.body.price,
+        country: req.body.country,
+        imageLink: req.body.imageLink,
+        language: req.body.language,
+        pages: req.body.pages,
+        title: req.body.title,
+        year: req.body.year,
+      },
+      function (err, book) {
+        const response = {
+          message: book,
+          status: 201,
+        };
+        if (err) {
+          response.status = 500;
+          response.message = err;
+        } else {
+          console.log("Book Created ");
+          res.status(response.status).json(response.message);
+        }
+      }
+    );
+  } else {
+    res.status(400).json({ error: "Body missing data " });
   }
-}
+};
 
-module.exports.bookDelete=function(req,res){
-  var bookId=req.params.bookId;
-  Book.findByIdAndRemove(bookId).exec(function(err,book){
-    var response={
-      message:err,
-      status:204
-    }
-    if(err){
-    
-      response.message=err,
-      response.status=500
-    }else if(!book){  
+module.exports.bookDelete = function (req, res) {
+  var bookId = req.params.bookId;
+  Book.findByIdAndRemove(bookId).exec(function (err, book) {
+    var response = {
+      message: err,
+      status: 204,
+    };
+    if (err) {
+      (response.message = err), (response.status = 500);
+    } else if (!book) {
       response.status = 404;
       response.message = { message: "Book ID not foud" };
     }
-      res.status(response.status).json(response.message);
+    res.status(response.status).json(response.message);
   });
-}
+};
 
-module.exports.bookUpdate=function(req,res){
-  var bookId=req.params.bookId;
-  Book.findById(bookId).exec(function(err,book){
-    var response={
-      message:book,
-      status:204
+module.exports.bookUpdate = function (req, res) {
+  var bookId = req.params.bookId;
+  Book.findById(bookId).exec(function (err, book) {
+    var response = {
+      message: book,
+      status: 204,
+    };
+    if (err) {
+      response.message = err;
+      response.status = 500;
+    } else if (!book) {
+      response.message = { message: "Book Not Found" };
+      response.status = 404;
     }
-    if(err){
-      response.message=err;
-      response.status=500;
-    }else if(!book){
-      response.message={message:"Book Not Found"}
-      response.status=404
-    }else{
-    book.title=req.body.title;
-    book.author=req.body.author;
-    book.price=parseFloat(req.body.price);
-    book.imageLink=req.body.imageLink;
-    book.country=req.body.country;
-    book.pages=parseInt(req.body.pages);
-    book.language=req.body.language;
-    book.year=parseInt(req.body.year);
-    book.save(function(err,book){
-      var response={
-        message:book,
-        status:204
-      }
-      if(err){
-        response.message=err;
-        response.status=500;
-      }else{
-        res.status(response.status).json(response.message); 
-      }
+    if(response.status!==204){
+      res.status(response.status).json(response.message);
+    } 
+    else {
+      book.title = req.body.title;
+      book.author = req.body.author;
+      book.price = parseFloat(req.body.price);
+      book.imageLink = req.body.imageLink;
+      book.country = req.body.country;
+      book.pages = parseInt(req.body.pages);
+      book.language = req.body.language;
+      book.year = parseInt(req.body.year);
+      book.save(function (err, book) {
+        var response = {
+          message: book,
+          status: 204,
+        };
+        if (err) {
+          response.message = err;
+          response.status = 500;
+        } 
+        else{ 
+            res.status(response.status).json(response.message);
+        }
+      });
+    }
 
-    })
-  }
-  })
-}
+  });
+};

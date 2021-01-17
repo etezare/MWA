@@ -13,9 +13,12 @@ router.route("/books/:bookId")
 .put(controllerBook.bookUpdate);
 
 router.route("/books/:bookId/authors/:authorId")
-.get(controllerAuthor.authorGetOne);
+.get(controllerAuthor.authorGetOne)
+.put(controllerAuthor.authorUpdate)
+.delete(controllerAuthor.authorDelete);
 
 router.route("/books/:bookId/authors")
-.get(controllerAuthor.authorGetAll);
+.get(controllerAuthor.authorGetAll)
+.post(controllerAuthor.authorAdd);
 
 module.exports=router;
