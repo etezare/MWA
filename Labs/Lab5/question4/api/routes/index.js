@@ -11,7 +11,8 @@ router.route("/students/:studentId")
 .delete(controllerStudent.studentsDeleteOne);
 
 router.route("/students/:studentId/addresses")
-.get(controllerAddress.addressGetAll);
+.get(controllerAddress.addressGetAll)
+.post(controllerAddress.addressAdd);
 
 router.route("/students/:studentId/addresses/:addressId")
 .get(controllerAddress.addressGetOne)

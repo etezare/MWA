@@ -34,10 +34,13 @@ Student.findById(studentId).select("addresses").exec(function(err,doc){
 
 
 var _addAddress = function (req, res, student) {
-  student.addresses.city = req.body.city;
-  student.addresses.state=req.body.state;
-  student.addresses.zipcode=parseInt(req.body.zipcode);
-  student.addresses.street=req.body.street;
+  let address={
+    city :req.body.city,
+  state:req.body.state,
+  zipcode:parseInt(req.body.zipcode),
+  street:req.body.street
+  }
+  student.addresses.push(address);
   student.save(function (err, updatedStudent) {
     var response = {
         status: 200,
@@ -72,6 +75,9 @@ module.exports.addressAdd = function (req, res) {
         response.message = { message: "Student ID not found" };
       }
       if (student) {
+        if(!student.addresses){
+          student.addresses=[];
+        }
         _addAddress(req, res, student);
       } else {
         res.status(response.status).json(response.message);

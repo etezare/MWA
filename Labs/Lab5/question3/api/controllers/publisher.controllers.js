@@ -26,7 +26,6 @@ module.exports.publisherGet = function (req, res) {
 };
 
 var _addPublisher = function (req, res, game) {
-  console.log(newGame);
   game.publisher.name = req.body.name;
   game.publisher.location.coordinates = [
     parseFloat(req.body.lng),

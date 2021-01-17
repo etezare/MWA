@@ -1,4 +1,5 @@
 const { response } = require("express");
+const { ObjectID } = require("mongodb");
 var mongoose = require("mongoose");
 var Game = mongoose.model("Game");
 
@@ -53,14 +54,18 @@ module.exports.reviewsGetAll=function(req,res){
 }
 
 var _addReview = function (req, res, game) {
-  game.reviews.name = req.body.name;
-  game.reviews.createdOn=Date.parse(req.body.createdOn);
-  game.reviews.rating=parseInt(req.body.rating);
-  game.reviews.review=req.body.review;
+  let review ={
+    name:req.body.name,
+    createdOn:Date.parse(req.body.createdOn),
+    rating:parseInt(req.body.rating),
+    review:req.body.review
+  }
+  game.reviews.push(review);
   game.save(function (err, updatedGame) {
+    console.log(updatedGame);
     var response = {
         status: 200,
-        message: []
+        message: updatedGame
     };
     if (err) {
       response.status = 500;
@@ -80,7 +85,7 @@ module.exports.reviewAdd = function (req, res) {
   Game.findById(gameId)
     .select("reviews")
     .exec(function (err, game) {
-      var response = { status: 200, message: [] };
+      var response = { status: 200, message: game };
       if (err) {
         console.log("Error finding game");
         response.status = 500;

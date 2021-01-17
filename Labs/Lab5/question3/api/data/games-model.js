@@ -1,3 +1,4 @@
+const { ObjectID } = require("mongodb");
 var mongoose=require("mongoose");
 var publisherSchema=new mongoose.Schema({
     name:String,
@@ -21,6 +22,11 @@ var publisherSchema=new mongoose.Schema({
 })
 
 var reviewSchema=new mongoose.Schema({
+    
+    id :{
+        type: ObjectID,
+        required:false
+    },
     name:{
         type:String,
         required:false
