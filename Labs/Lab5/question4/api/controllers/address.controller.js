@@ -35,7 +35,7 @@ Student.findById(studentId).select("addresses").exec(function(err,doc){
 
 var _addAddress = function (req, res, student) {
   let address={
-    city :req.body.city,
+  city :req.body.city,
   state:req.body.state,
   zipcode:parseInt(req.body.zipcode),
   street:req.body.street
