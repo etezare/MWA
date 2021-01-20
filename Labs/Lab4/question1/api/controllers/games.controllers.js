@@ -23,13 +23,15 @@ module.exports.gamesGetAll = function (req, res) {
     .skip(offset)
     .limit(count)
     .exec(function (err, games) {
-      if (err) {
-        console.log("Found Games", games.length);
-        res.status(500).json(err);
-      } else {
-        console.log("Found games", games.length);
-        res.json(games);
+      var response={
+        message:games,
+        status:200
       }
+      if (err) {
+        response.message=err;
+        response.status=500;
+      } 
+        res.status(response.status).json(response.message);
     });
 };
 module.exports.gamesGetOne = function (req, res) {

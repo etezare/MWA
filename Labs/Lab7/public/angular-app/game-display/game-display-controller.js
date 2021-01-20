@@ -1,7 +1,7 @@
 angular.module("meanGames").controller("GameController", GameController);
 
-function _getStarRating(stars){
-    return new Array(stars);
+function _getStarRating(stars){  
+    return new Array(parseInt(stars));
 }
 
 function GameController($routeParams, GameDataFactory){
@@ -12,5 +12,6 @@ function GameController($routeParams, GameDataFactory){
         .then(function(response){
             vm.game = response;
             vm.rating = _getStarRating(response.rate);
+    
     });
 }

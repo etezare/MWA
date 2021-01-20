@@ -23,13 +23,17 @@ module.exports.studentsGetAll = function (req, res) {
     .skip(offset)
     .limit(count)
     .exec(function (err, students) {
+      var response = {
+        status: 200,
+        message: students,
+      };
       if (err) {
-        console.log("Found students", students.length);
-        res.status(500).json(err);
-      } else {
-        console.log("Found students", students.length);
-        res.json(students);
-      }
+        response.message=err;
+        response.status=500;
+      } 
+
+        res.status(response.status).json(response.message);
+    
     });
 };
 module.exports.studentGetOne = function (req, res) {
