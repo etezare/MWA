@@ -29,6 +29,7 @@ var bookSchema=mongoose.Schema({
     price:Number,
     country:String,
     imageLink:String,
+    link:String,
     language:String,
     pages:Number,
     title:{

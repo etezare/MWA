@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bookRental">
   <head>
     <title>Book Rental</title>
     <link href="CSS/bootstrap.min.css" rel="stylesheet"/>
     <link href="CSS/custom.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Book Rental homepage.</h1>
+    <div ng-view></div>
     <footer class="footer">
       <div class="container">
         <p class="test-muted text-center">
@@ -23,5 +23,11 @@
       </div>
     </footer>
     <script src="jquery/jquery-3.5.1.min.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="angular-app/app.js"></script>
+    <script src="angular-app/book-data-factory/book-data-fatory.js"></script>
+    <script src="angular-app/book-list/book-list-controller.js"></script>
+    <script src="angular-app/book-display/book-diplay-controller.js"></script>
   </body>
 </html>

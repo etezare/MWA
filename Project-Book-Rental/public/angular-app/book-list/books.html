@@ -1,0 +1,6 @@
+<h1>{{booksCtrl.home}}</h1>
+<ul>
+    <li ng-repeat="book in booksCtrl.books">
+        <a ng-href="#!/book/{{book._id}}">{{book.title}}</a>
+    </li>
+</ul>

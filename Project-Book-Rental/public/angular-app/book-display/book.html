@@ -1,0 +1,21 @@
+<h3>Information about the book: 
+    <p> {{bookCtrl.book.title | uppercase}} 
+     </p>
+ </h3>
+ <p> 
+    <img src={{bookCtrl.book.imageLink}} style="width: 150px;height: 150px;"><br>
+     Link : <a href={{bookCtrl.book.link}}>Wikipedia for more info click here</a><br>
+     Title: {{bookCtrl.book.title}} <br>
+     Price: {{bookCtrl.book.price | currency}}<br>
+     Country: {{bookCtrl.book.country}}<br>
+     Language: {{bookCtrl.book.language}}<br>
+     Pages: {{bookCtrl.book.pages}} <br>
+     Year: {{bookCtrl.book.year}}
+ </p>
+    <div>Author:
+        <ul>
+         <li ng-repeat="author in bookCtrl.book.author">
+            {{author.name}}
+        </li>
+        </ul>
+    </div>

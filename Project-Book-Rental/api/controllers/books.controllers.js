@@ -23,19 +23,20 @@ module.exports.booksGetAll = function (req, res) {
     .skip(offset)
     .limit(count)
     .exec(function (err, books) {
+      var response = {
+        status: 200,
+        message: books,
+      };
       if (err) {
-        console.log("Found books", books.length);
-        res.status(500).json(err);
-      } else {
-        console.log("Found books", books.length);
-        res.json(books);
-      }
+        response.status=500;
+        response.message=err;
+      } 
+        res.status(response.status).json(response.message);
+     
     });
 };
 module.exports.bookGetOne = function (req, res) {
   var bookId = req.params.bookId;
-
-  console.log(bookId);
   Book.findById(bookId).exec(function (err, book) {
     var response = {
       status: 200,
