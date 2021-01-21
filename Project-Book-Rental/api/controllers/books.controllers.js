@@ -56,7 +56,6 @@ module.exports.bookGetOne = function (req, res) {
 
 module.exports.bookAddOne = function (req, res) {
   console.log("Post Book");
-  console.log(req.body);
   if (req.body) {
     Book.create(
       {
@@ -68,6 +67,7 @@ module.exports.bookAddOne = function (req, res) {
         pages: req.body.pages,
         title: req.body.title,
         year: req.body.year,
+        link: req.body.link
       },
       function (err, book) {
         const response = {
@@ -92,8 +92,8 @@ module.exports.bookDelete = function (req, res) {
   var bookId = req.params.bookId;
   Book.findByIdAndRemove(bookId).exec(function (err, book) {
     var response = {
-      message: err,
-      status: 204,
+      message: book,
+      status: 200,
     };
     if (err) {
       (response.message = err), (response.status = 500);
@@ -127,6 +127,7 @@ module.exports.bookUpdate = function (req, res) {
       book.author = req.body.author;
       book.price = parseFloat(req.body.price);
       book.imageLink = req.body.imageLink;
+      book.link=req.body.link;
       book.country = req.body.country;
       book.pages = parseInt(req.body.pages);
       book.language = req.body.language;

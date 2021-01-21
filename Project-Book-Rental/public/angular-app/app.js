@@ -9,5 +9,10 @@ function config($routeProvider){
         templateUrl:"/angular-app/book-display/book.html",
         controller:"bookController",
         controllerAs:"bookCtrl"
+    }) 
+    .when("/book/delete/:id",{
+        templateUrl:"/angular-app/book-delete/book-delete.html",
+        controller:"bookDeleteController",
+        controllerAs:"vm"
     })
 }
