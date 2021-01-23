@@ -1,0 +1,23 @@
+angular.module("jobSearching",["ngRoute"]).config(config);
+function config($routeProvider){
+    $routeProvider.when("/",{
+        templateUrl:"/angular-app/job-list/jobs.html",
+        controller:"jobsController",
+        controllerAs:"vm"
+    })
+    .when("/jobs/:id",{
+        templateUrl:"/angular-app/job-display/job.html",
+        controller:"jobController",
+        controllerAs:"vm"
+    })
+    .when("/job/add",{
+        templateUrl:"/angular-app/job-add/jobAdd.html",
+        controller:"jobAddController",
+        controllerAs:"vm"
+    })
+     .when("/job/delete/:id",{
+        templateUrl:"/angular-app/job-delete/job-delete.html",
+        controller:"jobDeleteController",
+        controllerAs:"vm"
+    })
+}

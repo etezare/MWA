@@ -1,0 +1,26 @@
+<h1>Information about the Job:
+    <p>
+        {{vm.job.title | uppercase}}
+    </p>
+</h1>
+<p>
+    Title: {{vm.job.title}}<br />
+    Salary: {{vm.job.salary | currency}}<br />
+    exprience: {{vm.job.exprience}}<br />
+    Skills:
+<ul>
+    <li ng-repeat="skill in vm.job.skills">
+        {{skill}}
+    </li>
+</ul>
+description: {{vm.job.description}}<br />
+Post Date: {{vm.job.postDate | date:"shortDate"}}<br/>
+location:<ul>
+<li>street:{{vm.job.location.street}}</li>
+<li>city:{{vm.job.location.city}}</li>
+<li>state:{{vm.job.location.state}}</li>
+<li>zipcode:{{vm.job.location.zipcode}}</li>
+
+
+</ul>
+</p>

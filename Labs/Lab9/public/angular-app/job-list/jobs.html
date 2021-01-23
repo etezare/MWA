@@ -1,0 +1,9 @@
+<h1>{{vm.home}}</h1>
+<button ng-click="vm.addJob()" class="btn-success" >Add New Job</button>
+<ul>
+    <li ng-repeat="job in vm.jobs">
+        <a ng-href="#!/jobs/{{job._id}}" >{{job.title}}</a>
+        <button ng-click="vm.deleteJob(job._id)" class="btn-danger" >Delete</button>
+    </li>
+</ul>
+

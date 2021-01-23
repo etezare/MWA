@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="jobSearching">
+    <head>
+        <title>
+      Job Search
+        </title>
+        <link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- <link href="CSS/bootstrap.min.css" rel="stylesheet"/> -->
+        <link href="CSS/custom.css" rel="stylesheet" />
+    </head>
+    <body>
+    <div ng-view></div>
+    <footer class="footer">
+      <div class="container">
+        <p class="test-muted text-center">
+          <a href="https://compro.miu.edu" target="_blank">
+            <img
+              src="/images/compro-web-logo-442x112.png"
+              height="60"
+              alt="MIU Compro"/></a>
+          <br />
+          <small class="text black 50 text center"
+            >&copy; 2020 Maharishi International University. All Rights
+            Reserved.
+          </small>
+        </p>
+      </div>
+    </footer>
+    <script src="jquery/jquery-3.5.1.min.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="angular-app/app.js"></script>
+    <script src="angular-app/job-data-factory/job-data-factory.js"></script>
+    <script src="angular-app/job-list/job-list-controller.js"></script>
+    <script src="angular-app/job-display/job-display-controller.js"></script>
+    <script src="angular-app/job-add/jobAddController.js"></script>
+    <script src="angular-app/job-delete/jobDeleteController.js"></script>
+</body>
+</html>

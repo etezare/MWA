@@ -1,0 +1,17 @@
+<h1>Add Job Page</h1>
+<form name="vm.jobForm" ng-submit="vm.jobAdd()">
+    To add a new job please fill in all the fields below:<br />
+    Title:
+    <input type="text" name="title" required ng-model="vm.newJobTitle" style="color: black" /><br />
+    Salary:<input type="number" name="salary" required ng-model="vm.newJobSalary" style="color: black" ng-min="1" />
+    <span ng-show="vm.jobForm.salary.$dirty && vm.jobForm.salary.$invalid" style="color: red">please enter more than 0
+    </span><br />
+    PostDate:
+    <input type="date" name="postDate" required ng-model="vm.newJobPostDate" style="color: black" /><br />
+    Desciption:<input type="text" name="description" required ng-model="vm.newJobDescription"
+        style="color: black" /><br />
+    Exprience:<input type="text" name="exprience" required ng-model="vm.newJobExprience" style="color: black" /><br />
+    Skill:<input type="text" name="skill" required ng-model="vm.newJobSkill" style="color: black" /><br />
+    <button type="submit" class="btn-success">Add job</button>
+</form>
+<div ng-if="vm.isSubmitted" style="color: blue;">{{vm.newJobTitle}} Added Successfully</div>

@@ -1,0 +1,23 @@
+{
+  "name": "manage_jobsearching",
+  "version": "1.0.0",
+  "description": "app manages job searching",
+  "main": "manage_jobsearching.js",
+  "scripts": {
+    "start": "nodemon manage_jobsearching.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "job",
+    "searching"
+  ],
+  "author": "Essey Tezare",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13"
+  }
+}
