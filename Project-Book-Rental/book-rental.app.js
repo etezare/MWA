@@ -6,7 +6,7 @@ var routes= require("./api/routes");
 var app=express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-app.set("port",8081);
+app.set("port",8080);
 app.use("/api",routes);
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/node_modules",express.static(path.join(__dirname, "node_modules")));

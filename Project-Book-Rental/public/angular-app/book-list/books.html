@@ -1,7 +1,12 @@
 <h1>{{vm.home}}</h1>
 <!-- <button ng-click="vm.addBook()" class="btn-success" >Add New Book</button> -->
-    <input ng-model="vm.searchBook" class="form-control mr-sm-2" type="text" placeholder="Search">
-<ul>
+
+
+<form name="vm.bookForm" class="form-inline my-2 my-lg-0" ng-submit="vm.search()">
+<input ng-model="vm.searchBook" class="form-control mr-sm-2" type="text" placeholder="Search">
+<button type="submit" class="btn btn-secondary my-2 my-sm-0" >Search</button>
+</form>  
+ <ul>
     <li ng-repeat="book in vm.books | filter:vm.searchBook">
         <a ng-href="#!/book/{{book._id}}">{{book.title}}</a>  
         <a class="btn-danger" ng-href="#!/book/delete/{{book._id}}">Delete Book</a>

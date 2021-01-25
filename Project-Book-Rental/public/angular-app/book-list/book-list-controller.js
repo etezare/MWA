@@ -10,13 +10,16 @@ function booksController(bookDataFactory) {
   //   vm.addBook=function(){
   //     window.location = "#!/addbook";
   // }
-  // vm.search = function ($event) {
-  //   $event.preventDefault()
-  //   var searchBook = vm.searchBook;
-  //   let books = vm.books;
-  //   if ((vm.searchBook = "")) {
-  //     vm.books = books;
-  //   }
-  //   vm.books = vm.books.filter((book) => book.title == searchBook);
-  // };
+  vm.search = function () {
+    var searchBook = vm.searchBook;
+
+    bookDataFactory.getAllBooksByTitle(searchBook).then(function(response){
+      vm.books=response;
+    })
+    // let books = vm.books;
+    // if ((vm.searchBook = "")) {
+    //   vm.books = books;
+    // }
+    // vm.books = vm.books.filter((book) => book.title == searchBook);
+  };
 }

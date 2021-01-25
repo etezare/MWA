@@ -5,10 +5,16 @@ function bookControllerFactory($http){
         getOneBook: getOneBook,
         addOneBook:addOneBook,
         deleteOneBook:deleteOneBook,
-        registerUser:registerUser
+        registerUser:registerUser,
+        getAllBooksByTitle:getAllBooksByTitle
     }
     function registerUser(user) {
         return $http.post("/api/users/register", user).then(complete).catch(failed);
+      }
+
+
+      function getAllBooksByTitle(searchBook){
+        return $http.get("/api/books?title="+searchBook).then(complete).catch(failed);
       }
     function getAllBooks(){
         return $http.get("/api/books").then(complete).catch(failed);

@@ -6,8 +6,6 @@ var jwt = require("jsonwebtoken");
 
 module.exports.register = function (req, res) {
   console.log("Registering user");
-  console.log(req.body);
-  console.log(req.body.password)
   var username = req.body.username;
   var name = req.body.name || null;
   var password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));

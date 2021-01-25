@@ -3,6 +3,9 @@ var Book = mongoose.model("Book");
 module.exports.booksGetAll = function (req, res) {
   var offset = 0;
   var count = 7;
+  var search=req.query.title;
+
+
   if (req.query && req.query.offset) {
     offset = parseInt(req.query.offset, 10);
   }
@@ -18,8 +21,23 @@ module.exports.booksGetAll = function (req, res) {
       .json({ message: "QueryString Offset and Count shoulb be numbers" });
     return;
   }
-
-  Book.find()
+  if(search){
+    Book.find()
+    .exec(function (err, books) {
+      books = books.filter((book) => book.title == search);
+      var response = {
+        status: 200,
+        message: books,
+      };
+      if (err) {
+        response.status=500;
+        response.message=err;
+      } 
+        res.status(response.status).json(response.message);
+     
+    });
+  }else{
+    Book.find()
     .skip(offset)
     .limit(count)
     .exec(function (err, books) {
@@ -34,6 +52,9 @@ module.exports.booksGetAll = function (req, res) {
         res.status(response.status).json(response.message);
      
     });
+  }
+
+ 
 };
 module.exports.bookGetOne = function (req, res) {
   var bookId = req.params.bookId;
