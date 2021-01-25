@@ -6,7 +6,11 @@
     <link href="CSS/custom.css" rel="stylesheet" />
   </head>
   <body>
-    <div ng-view></div>
+    <books-Navigation></books-Navigation>
+    <DIV class="container">
+      <div ng-view></div>
+    </DIV>
+  
     <footer class="footer">
       <div class="container">
         <p class="test-muted text-center">
@@ -30,5 +34,12 @@
     <script src="angular-app/book-list/book-list-controller.js"></script>
     <script src="angular-app/book-display/book-diplay-controller.js"></script>
     <script src="angular-app/book-delete/bookDeleteController.js"></script>
+    <script src="angular-app/register/register-controller.js"></script>
+    <script src="angular-app/navigation-directive/navigation-directive.js"></script>
+    <script src="angular-app/login/loging-controller.js"></script>
+    <script src="angular-app/authentication/auth-factory.js"></script>
+    <script src="angular-app/authentication/auth-interceptor.js"></script>
+    <script src="/node_modules/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="angular-app/book-add/bookAddController.js"></script>
   </body>
 </html>

@@ -1,0 +1,22 @@
+<h1>Add Book Form</h1>
+
+<form name="vm.bookForm" ng-submit="vm.addBook()">
+    To add a new book please fill in all the fields below:<br />
+    Title:
+    <input type="text" name="title" required ng-model="vm.newBookTitle" style="color: black" /><br />
+    Price:<input type="number" name="price" required ng-model="vm.newBookPrice" style="color: black" ng-min="1"/>
+    <span ng-show="vm.bookForm.price.$dirty && vm.bookForm.price.$invalid" style="color: red">please enter more than 0
+    </span><br/>
+    Year:
+    <input type="number" name="year" required ng-model="vm.newBookYear" style="color: black" ng-maxlength="4" ng-minlength="4" />
+    <span ng-show="vm.bookForm.year.$dirty && vm.bookForm.year.$invalid" style="color: red">please enter 4 digits
+    </span><br/>
+    Number Of Pages:<input type="number" name="pages" required ng-model="vm.newBookPages" style="color: black" ng-min="20"/>
+    <span ng-show="vm.bookForm.pages.$dirty && vm.bookForm.pages.$invalid" style="color: red">please enter more than 20
+    </span><br/>
+    Link:<input type="text" name="link" required ng-model="vm.newBookLink"
+      style="color: black" /><br />
+    Language:<input type="text" name="language" required ng-model="vm.newBookLanguage" style="color: black" /><br />
+    Country:<input type="text" name="country" required ng-model="vm.newBookCountry" style="color: black" /><br />
+    <button type="submit" class="btn-success">Add book</button>
+  </form>

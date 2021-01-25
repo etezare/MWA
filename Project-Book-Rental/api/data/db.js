@@ -1,5 +1,6 @@
 var mongoose=require("mongoose");
 require("./books-model.js")
+require("./users-model.js")
 var dbURL="mongodb://localhost:27017/bookRentalDB";
 mongoose.connect(dbURL);
 mongoose.connection.on("connected",function(){

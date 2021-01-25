@@ -1,28 +1,8 @@
-<h1>{{booksCtrl.home}}</h1>
+<h1>{{vm.home}}</h1>
+<button ng-click="vm.addBook()" class="btn-success" >Add New Book</button>
 <ul>
-    <li ng-repeat="book in booksCtrl.books">
+    <li ng-repeat="book in vm.books">
         <a ng-href="#!/book/{{book._id}}">{{book.title}}</a>  
-        <a class="btn-danger" ng-href="#!/book/delete/{{book._id}}">Delete Game</a>
+        <a class="btn-danger" ng-href="#!/book/delete/{{book._id}}">Delete Book</a>
     </li>
 </ul>
-
-<form name="booksCtrl.bookForm" ng-submit="booksCtrl.addBook()">
-    To add a new book please fill in all the fields below:<br />
-    Title:
-    <input type="text" name="title" required ng-model="booksCtrl.newBookTitle" style="color: black" /><br />
-    Price:<input type="number" name="price" required ng-model="booksCtrl.newBookPrice" style="color: black" ng-min="1"/>
-    <span ng-show="booksCtrl.bookForm.price.$dirty && booksCtrl.bookForm.price.$invalid" style="color: red">please enter more than 0
-    </span><br/>
-    Year:
-    <input type="number" name="year" required ng-model="booksCtrl.newBookYear" style="color: black" ng-maxlength="4" ng-minlength="4" />
-    <span ng-show="booksCtrl.bookForm.year.$dirty && booksCtrl.bookForm.year.$invalid" style="color: red">please enter 4 digits
-    </span><br/>
-    Number Of Pages:<input type="number" name="pages" required ng-model="booksCtrl.newBookPages" style="color: black" ng-min="20"/>
-    <span ng-show="booksCtrl.bookForm.pages.$dirty && booksCtrl.bookForm.pages.$invalid" style="color: red">please enter more than 20
-    </span><br/>
-    Link:<input type="text" name="link" required ng-model="booksCtrl.newBookLink"
-      style="color: black" /><br />
-    Language:<input type="text" name="language" required ng-model="booksCtrl.newBookLanguage" style="color: black" /><br />
-    Country:<input type="text" name="country" required ng-model="booksCtrl.newBookCountry" style="color: black" /><br />
-    <button type="submit" class="btn-success">Add book</button>
-  </form>
