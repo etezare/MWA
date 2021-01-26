@@ -1,0 +1,19 @@
+{
+  "name": "lab11",
+  "version": "1.0.0",
+  "description": "express application",
+  "main": "student_attendance.js",
+  "scripts": {
+    "start": "nodemon student_attendance.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "User",
+    "Interface"
+  ],
+  "author": "Essey Tezare",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

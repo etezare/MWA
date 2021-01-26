@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Faculty</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/CSS/bootstrap.min.css" rel="stylesheet" />
+        <link href="/CSS/custom.css" rel="stylesheet"/>
+      </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">    
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/faculty">Faculty</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/api/faculty/qr-code">qr-code</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/api/faculty/attendance">Attendance</a>
+              </li>
+        </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+        <a href="/api/students/add" class="btn btn-success btn-xs pull-right"><b>+</b> Add new Student</a>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+                <tr>
+                    <td>1</td>
+                    <td>Essey</td>
+                    <td>11111</td>
+                    <td class="text-center"><a class='btn btn-info btn-xs' href="/api/students/edit"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Biniam</td>
+                    <td>22222</td>
+                    <td class="text-center"><a class='btn btn-info btn-xs' href="/api/students/edit"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Eyob</td>
+                    <td>33333</td>
+                    <td class="text-center"><a class='btn btn-info btn-xs' href="/api/students/edit"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                </tr>
+        </table>
+        </div>
+    </div>
+     <button onclick="goBack()" style="float: right;"  class="btn btn-primary">Go Back</button>
+      <footer class="footer">
+       
+        <div class="container">
+          <p class="test-muted text-center">
+            <a href="https://compro.miu.edu" target="_blank">
+              <img
+                src="/images/compro-web-logo-442x112.png"
+                height="60"
+                alt="MIU Compro"/></a>
+            <br />
+            <small class="text black 50 text center"
+              >&copy; 2020 Maharishi International University. All Rights
+              Reserved.
+            </small>
+          </p>
+        </div>
+      </footer>
+      <script src="/../jquery/jquery.js" >
+ 
+      </script>
+</body>
+</html>

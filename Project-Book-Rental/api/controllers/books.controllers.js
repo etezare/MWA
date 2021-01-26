@@ -24,7 +24,7 @@ module.exports.booksGetAll = function (req, res) {
   if(search){
     Book.find()
     .exec(function (err, books) {
-      books = books.filter((book) => book.title == search);
+      books = books.filter(book => book.title == search);
       var response = {
         status: 200,
         message: books,
