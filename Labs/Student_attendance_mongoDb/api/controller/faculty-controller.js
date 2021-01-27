@@ -6,7 +6,7 @@ dispatchPages=function(pageName, res) {
         message:"index Page"
     }
 
-    res.sendFile(path.join(__dirname,"..","..","public",pageName+".html"));
+    res.sendFile(path.join(__dirname,"..","..","public","template",pageName+".html"));
 };
 
 module.exports.facultyIndex=function(req,res){
