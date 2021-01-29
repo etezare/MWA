@@ -9,7 +9,7 @@ function bookControllerFactory($http){
         getAllBooksByTitle:getAllBooksByTitle
     }
     function registerUser(user) {
-        return $http.post("/api/users/register", user).then(complete).catch(failed);
+        return $http.a("/api/users/register", user).then(complete).catch(failed);
       }
 
 

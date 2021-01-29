@@ -11,7 +11,7 @@ var studentSchema=mongoose.Schema({
     firstName:String,
     lastName:String,
     email:String,
-    studentId:Number,
+    studentId:String,
     attendance:[attendanceSchema]
 })
 mongoose.model("Student",studentSchema,"student");
