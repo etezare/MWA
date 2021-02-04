@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row py-5 justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center py-4">Courses</h1>
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+          <tr>
+            <th>Course Title</th>
+            <th>Course Code</th>
+            <th>Attendance</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let course of courses">
+            <td>{{course.title}}</td>
+            <td>{{course.code}}</td>
+            <td ><a class='btn btn-info btn-sm' (click)="getAttendanceForCourse(course)"><span class="glyphicon glyphicon-edit"></span> Course Attendance</a>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+

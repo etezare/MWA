@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Student</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/CSS/bootstrap.min.css" rel="stylesheet" />
+  <link href="/CSS/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/studentpage">Students</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/studentpage/qr-code">qr-code</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="new navbar-nav navbar-right">
+      <li>
+        <a class="nav-link" href="/api/studentpage/profile">Profile</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <p class="test-muted text-center">
+      Scann qr-code for attentance</p>
+  </div>
+
+  <div class="container" style="background-color: white; ">
+
+    <p class="test-muted text-center">
+      <img src="/images/qr-code.png" height="50%" width="40%" alt="qr-code" /></a>
+    </p>
+  </div>
+
+  <button onclick="goBack()" style="float: right;"  class="btn btn-primary">Go Back</button>
+
+  
+ 
+  <footer class="footer">
+    <div class="container">
+      <p class="test-muted text-center">
+        <a href="https://compro.miu.edu" target="_blank">
+          <img src="/images/compro-web-logo-442x112.png" height="60" alt="MIU Compro" /></a>
+        <br />
+        <small class="text black 50 text center">&copy; 2020 Maharishi International University. All Rights
+          Reserved.
+        </small>
+      </p>
+    </div>
+  </footer>
+  <script src="/../jquery/jquery.js" >
+ 
+  </script>
+</body>
+
+</html>

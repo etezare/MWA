@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!isfaculty" routerLink="student">Students</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isfaculty" routerLink="faculty">Faculty</a>
+      </li>
+      <!--      <li class="nav-item">-->
+      <!--        <a class="nav-link"  routerLink="attendance">Attendance</a>-->
+      <!--      </li>-->
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!isfaculty" routerLink="qr-code" routerLinkActive="student">qr-code</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isfaculty" routerLink="facultyQr-code">qr-code</a>
+      </li>
+    </ul>
+    <ul class="new navbar-nav navbar-right">
+      <li>
+        <button class="btn btn-success btn-sm pull-right " (click)="logoutHandler()" *ngIf="isloggedIn">logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>

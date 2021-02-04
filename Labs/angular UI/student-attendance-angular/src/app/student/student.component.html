@@ -1,0 +1,53 @@
+<ul class="new navbar-nav navbar-right">
+  <button class="btn btn-light btn-sm pull-right " (click)=addCourse()>Register Course</button>
+  <button class="btn btn-light btn-sm pull-right " (click)=getRegisteredCourse()>Course Registered</button>
+  <button class="btn btn-light btn-sm pull-right " (click)=getProfile()>Profile</button>
+</ul>
+
+
+<div class="container">
+  <p class="test-muted text-center">
+    Scan qr-code for attentance</p>
+</div>
+
+<div class="container" style="background-color: white; width: 200px;">
+
+  <p class="test-muted text-center">
+    <img src="assets/images/qr-code.png" height="150" alt="qr-code"/>
+  </p>
+</div>
+<div class="container">
+  <div class="row py-5 justify-content-center">
+    <div class="col-md-8">
+      <div class="col-md-12 table-responsive" #epltable>
+        <div style="padding-bottom: 10px;padding-top: 10px;">
+          <div class="row">
+            <div class="col-sm-12">
+              <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Attendance</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let attendance of attendances">
+            <td>{{attendance.name}}</td>
+            <td>{{attendance.date | date}}</td>
+            <td>{{attendance.attendance}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
